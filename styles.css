@@ -1,0 +1,9 @@
+body{
+	width: 960px;
+	background-color: gray;
+	margin: 0 auto;
+}
+
+h2{
+	text-align: center;
+}

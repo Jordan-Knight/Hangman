@@ -1,25 +1,34 @@
+var wordbank = ["item1", "item2", "item3", "item4", "item5"];
+var alpha = "qwertyuiopasdfghjklzxcvbnm";
+var counter = 15;
+var letterbank = [];
+
+document.onkeyup = function(event) {
+
+	var keyEntered = event.key;
+
+	if (alpha.indexOf(keyEntered) > -1) {
+
+    } 
+
+    else {
+
+        alert("You gotta pick a letter bud.  You hit the " + keyEntered + " key.")
+    }
+}
+
+
 var hangman = {
 
-	wordbank : {
-
-		item1 : "item1",
-		item2 : "item2"
-
-	},
-
-	imagebank = {
-
-	}
-
-	chooseWord : {
+	chooseWord : 
 		function (){
 			var word = wordbank[Math.floor(Math.random()*wordbank.length)];
-
+			console.log(word);
 			return word;
-		}
-	},
+		},
+	
 
-	letterArray : {
+	letterArray : 
 
 		function (){
 			var wordArray = [];
@@ -29,15 +38,24 @@ var hangman = {
 			}
 
 			return wordArray;
-		}
-	},
+		},
+	
 
-	guesser : {
+	hyphens : 
+		function (){
+			var hyphenArray = [];
+			for (i = 0; i < wordArray.length; i++){
+				hyphenArray.push("_");
+			}
+		},
+
+	
+
+	guesser : 
 
 		function (){
 
 			var eventKey = document.onkeyup;
-			var counter = 10;
 
 			for (i = 0; i < wordArray.length; i++){
 
@@ -50,25 +68,10 @@ var hangman = {
 				}
 
 			}
-		}
-	},
+		},
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 
 }
+
+console.log(wordbank);

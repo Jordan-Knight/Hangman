@@ -40,6 +40,14 @@ var hangman = {
 			console.log(hyphenArray);
 		},
 
+	populate : 
+
+		function (){
+			document.getElementById("letters").innerHTML = hyphenArray;
+			document.getElementById("guess-counter").innerHTML = counter;
+
+		},
+
 	
 
 	guesser : 
@@ -57,7 +65,7 @@ var hangman = {
 			}
 			if (event.key != wordArray[i]){
 				counter--;
-				console.log(counter);
+				document.getElementById("guess-counter").innerHTML = counter;
 			}
 		},
 
@@ -67,14 +75,41 @@ var hangman = {
 			hangman.chooseWord();
 			hangman.letterArray();
 			hangman.hyphens();
-		}
+			hangman.populate();
+			hangman.lettersGuessed();
+		},
+
+	lettersGuessed : 
+
+		function () {
+			document.onkeyup = function(event){
+				if (alpha.indexOf(event.key) > -1) {
+					letterbank.push(event.key);
+					document.getElementById("letter-bank").innerHTML = letterbank;
+
+		    	}
+		    
+
+			    else {
+
+			        alert("You gotta pick a letter bud.  You hit the " + event.key + " key.")
+			    }
+			}
+		},
+
+
+
+	
+
+	gameover : {
+
+	},
 
 	
 
 }
 
 
-hangman.setup();
 
 document.onkeyup = function(event) {
 

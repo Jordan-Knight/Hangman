@@ -14,13 +14,17 @@
 	<div class = "col-md-6">
 		<h2>Press any key to get started!</h2>
 		<h2>Wins</h2>
-		<h2 class = "win-counter">#</h2>
+		<h2 id = "win-counter">#</h2>
 		<h2>Current Word</h2>
-		<h2 class = "letters"></h2>
+		<h2 id = "letters"></h2>
 		<h2>Number of guesses remaining</h2>
-		<h2 class = "guess-counter"></h2>
+		<h2 id = "guess-counter"></h2>
 		<h2>Letters already guessed</h2>
-		<h2 classv= "letter-bank"></h2>
+		<h2 id = "letter-bank"></h2>
 	</div>
 </body>
+
+	<script type="text/javascript">
+		window.onload = hangman.setup();
+	</script>
 </html>

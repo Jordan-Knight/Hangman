@@ -53,19 +53,26 @@ var hangman = {
 	guesser : 
 
 		function (){
+			document.onkeyup = function(event){
 
-			console.log(event.key);
+				console.log(event.key);
+				for (i = 0; i < wordArray.length; i++){
 
-			for (i = 0; i < wordArray.length; i++){
+					if (event.key === wordArray[i]){
+						return wordArray[i];
+					}
 
-				if (event.key === wordArray[i]){
-					return wordArray[i];
 				}
+				if (event.key != wordArray[i] && alpha.indexOf(event.key) > -1){
+					counter--;
+					letterbank.push(event.key);
+					document.getElementById("guess-counter").innerHTML = counter;
+					document.getElementById("letter-bank").innerHTML = letterbank;
+				}
+				else {
 
-			}
-			if (event.key != wordArray[i]){
-				counter--;
-				document.getElementById("guess-counter").innerHTML = counter;
+			        alert("You gotta pick a letter bud.  You hit the " + event.key + " key.")
+			    }
 			}
 		},
 
@@ -76,30 +83,11 @@ var hangman = {
 			hangman.letterArray();
 			hangman.hyphens();
 			hangman.populate();
-			hangman.lettersGuessed();
+			hangman.guesser();
+			
+
 		},
 
-	lettersGuessed : 
-
-		function () {
-			document.onkeyup = function(event){
-				if (alpha.indexOf(event.key) > -1) {
-					letterbank.push(event.key);
-					document.getElementById("letter-bank").innerHTML = letterbank;
-
-		    	}
-		    
-
-			    else {
-
-			        alert("You gotta pick a letter bud.  You hit the " + event.key + " key.")
-			    }
-			}
-		},
-
-
-
-	
 
 	gameover : {
 
@@ -111,20 +99,7 @@ var hangman = {
 
 
 
-document.onkeyup = function(event) {
 
-	var keyEntered = event.key;
-
-	if (alpha.indexOf(keyEntered) > -1) {
-		hangman.guesser();
-
-    } 
-
-    else {
-
-        alert("You gotta pick a letter bud.  You hit the " + keyEntered + " key.")
-    }
-}
 
 
 

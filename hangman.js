@@ -59,7 +59,10 @@ var hangman = {
 				for (i = 0; i < wordArray.length; i++){
 
 					if (event.key === wordArray[i]){
-						return wordArray[i];
+						
+						hyphenArray[i] = wordArray[i];
+						document.getElementById("letters").innerHTML = hyphenArray;
+						return wordArray;
 					}
 
 				}
@@ -76,6 +79,10 @@ var hangman = {
 			}
 		},
 
+	gameover : {
+
+	},
+
 	setup : 
 
 		function(){
@@ -88,12 +95,6 @@ var hangman = {
 
 		},
 
-
-	gameover : {
-
-	},
-
-	
 
 }
 

@@ -8,16 +8,22 @@
 	<script src="hangman.js"></script>
 </head>
 <body>
-	<div class = "col-md-6">
-		<img src = "http://placehold.it/200x200">
+	<div class = "jumbotron">
+		<h1>Jurrassic Park Hangman</h1>
+		<p>You know you like dinosaurs...</p>
 	</div>
 	<div class = "col-md-6">
-		<h2>Press any key to get started!</h2>
+		<img class = "main-image" src ="assets/images/jeff.jpg">
+		<h2>"Hangman finds a way"</h2>
+		<h2>Jeff wants you to play</h2>
+	</div>
+	<div class = "col-md-6">
+		<h2>Guess the dinosaurs!</h2>
 		<h2>Wins</h2>
-		<h2 id = "win-counter">#</h2>
+		<h2 id = "win-counter"></h2>
 		<h2>Current Word</h2>
 		<h2 id = "letters"></h2>
-		<h2>Number of guesses remaining</h2>
+		<h2>Number of lives bafore you are eaten</h2>
 		<h2 id = "guess-counter"></h2>
 		<h2>Letters already guessed</h2>
 		<h2 id = "letter-bank"></h2>
@@ -25,6 +31,6 @@
 </body>
 
 	<script type="text/javascript">
-		window.onload = hangman.setup();
+		hangman.setup();
 	</script>
 </html>

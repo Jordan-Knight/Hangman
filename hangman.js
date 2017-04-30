@@ -36,7 +36,7 @@ var hangman = {
 		function (){
 			
 			for (i = 0; i < word.length; i++){
-				hyphens = hyphens + "_";
+				hyphens = hyphens + "#";
 			}
 			console.log(hyphens);
 		},
@@ -127,12 +127,24 @@ var hangman = {
 	win :
 		function(){
 			console.log("win")
-			wins = wins ++;
+			wins = wins += 1;
 			document.getElementById("win-counter").innerHTML = wins;
+			this.repop();
+
 		},
 	lose :
 		function(){
 
+		},
+	repop: 
+		function(){
+			counter = 10;
+			letterbank = [];
+			input = "";
+			word = "";
+			hyphens = "";
+			victory = 0;
+			this.setup();
 		},
 
 
